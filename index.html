@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="store-header">
+
+    <h1>The Needle Magic Shop</h1>
+
+    <p>
+        Handmade Crochet Creations
+    </p>
+
+</header>
+
+<div id="products"></div>
+
+<div id="cart">
+    <h2>Shopping Cart</h2>
+
+    <ul id="cart-items"></ul>
+
+    <div class="order-summary">
+    <div class="summary-row">
+        <span>Subtotal</span>
+        <span>₹<span id="subtotal">0</span></span>
+    </div>
+
+    <div class="summary-row">
+        <span>Shipping</span>
+        <span style="color: green;">FREE</span>
+    </div>
+
+    <hr>
+
+    <div class="summary-row total-row">
+        <span>Total</span>
+        <span>₹<span id="total">0</span></span>
+    </div>
+</div>
+
+    <hr>
+
+    <div class="summary-row total-row">
+        <span>Total</span>
+        <span>₹<span id="total">0</span></span>
+    </div>
+
+</div>
+
+<button id="checkout-btn" onclick="checkout()">
+    Proceed to Checkout
+</button>
+</div>
+
+<div id="checkout-modal" style="display:none;">
+    <div id="checkout-form">
+
+    <button id="cancel-checkout" onclick="cancelCheckout()">
+        ← Cancel Checkout
+    </button>
+
+    <h2>Checkout</h2>
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name">
+
+    <label for="phone">Mobile Number</label>
+
+    <div class="phone-input">
+        <span>+91</span>
+        <input
+            type="tel"
+            id="phone"
+            maxlength="10"
+            inputmode="numeric"
+            oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+    </div>
+
+    <label for="address">Delivery Address</label>
+    <input type="text" id="address">
+
+    <label for="city">City</label>
+    <input type="text" id="city">
+
+    <label for="pincode">PIN Code</label>
+    <input
+        type="text"
+        id="pincode"
+        maxlength="6"
+        inputmode="numeric"
+        oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+
+<button id="place-order-btn" onclick="placeOrder()">
+    Place Order
+</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,10 +1,125 @@
 const products = [
-    {
-        id: 1,
-        name: "Crochet Shell Bag",
-        price: 699,
-        image: "images/crochet-shell-bag.png"
-    }
+
+{
+    id: 1,
+    name: "Crochet Shell Bag",
+    price: 699,
+    description: "Beautiful handmade crochet shell bag. Perfect for casual outings and gifting.",
+    image: "images/image1.png"
+},
+
+{
+    id: 2,
+    name: "Crochet Football Keychain",
+    price: 349,
+    description: "Handmade crochet football keychain. A cute and sporty mini accessory, perfect gifting to football lovers. ",
+    image: "images/image2.png"
+},
+
+{
+    id: 3,
+    name: "Crochet Heart Keychain for DAD",
+    price: 299,
+    description: "Handmade crochet heart keychain for Dad. Perfect for keys, bags, or as a heartfelt gift.",
+    image: "images/image3.png"
+},
+
+{
+    id: 4,
+    name: "Crochet Tulip Tote Bag",
+    price: 799,
+    description: "Handmade crochet tulip tote bag. Stylish and spacious, perfect for everyday use, shopping, or gifting.",
+    image: "images/image4.png"
+},
+
+{
+    id: 5,
+    name: "Set of 3 Crochet Flower Bun Ties",
+    price: 499,
+    description: "Handmade crochet flower bun ties. Charming hair accessories, perfect for everyday wear or gifting.",
+    image: "images/image5.png"
+},
+
+{
+    id: 6,
+    name: "Crochet Triangle Shawl",
+    price: 1799,
+    description: "Handmade crochet triangle shawl. Soft, stylish, and perfect for adding warmth and elegance to any outfit.",
+    image: "images/image6.png"
+},
+
+{
+    id: 7,
+    name: "Crochet Rose Sling Bag",
+    price: 499,
+    description: "Handmade crochet rose sling bag. Elegant and lightweight, perfect for everyday use, special occasions, or gifting.",
+    image: "images/image7.png"
+},
+
+{
+    id: 8,
+    name: "Crochet Heart Keychain for MOM",
+    price: 299,
+    description: "Handmade crochet heart keychain for Mom. A sweet and thoughtful keepsake, perfect for keys, bags, or as a heartfelt gift.",
+    image: "images/image8.png"
+},
+
+{
+    id: 9,
+    name: "Crochet Flower Bracelet",
+    price: 299,
+    description: "Handmade crochet flower bracelet. Elegant and lightweight,a delicate and stylish accessory, perfect for everyday wear or gifting.",
+    image: "images/image9.png"
+},
+
+{
+    id: 10,
+    name: "Set of 6 Crochet Kashmiri Bangles(Size 2.4)",
+    price: 499,
+    description: "Handmade crochet Kashmiri bangles. perfect for adding a traditional touch to your style or gifting.",
+    image: "images/image10.png"
+},
+
+{
+    id: 11,
+    name: "Crochet Laptop/iPad/Book Cover",
+    price: 499,
+    description: "Handmade crochet laptop/iPad/book cover. Stylish and protective, perfect for carrying your essentials with a unique handmade touch.",
+    image: "images/image11.png"
+},
+
+{
+    id: 12,
+    name: "Crochet Morpankh Keychain",
+    price: 399,
+    description: "Handmade crochet Morpankh keychain. A beautiful and unique accessory, perfect for keys, bags, or thoughtful gifting.",
+    image: "images/image12.png"
+},
+
+{
+    id: 13,
+    name: "Set of 3 Crochet Yarn Keychain",
+    price: 399,
+    description: "Handmade crochet yarn keychain. A cute and creative accessory, perfect for bags, or gifting to crochet lovers.",
+    image: "images/image13.png"
+},
+
+{
+    id: 14,
+    name: " Pair of Crochet Earrings",
+    price: 399,
+    description: "Handmade crochet earrings. Lightweight and elegant, perfect for everyday wear, special occasions, or gifting.",
+    image: "images/image14.png"
+},
+
+{
+    id: 15,
+    name: "Crochet Rainbow Keychain",
+    price: 329,
+    description: "Handmade crochet rainbow keychain. A colorful and cheerful accessory, perfect for keys, bags, or gifting.",
+    image: "images/image15.png"
+}
+
 ];
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -25,7 +140,7 @@ function displayProducts() {
     <h2>${product.name}</h2>
 
     <p class="description">
-        Beautiful handmade crochet shell bag. Perfect for casual outings and gifting.
+        ${product.description}
     </p>
 
     <h3>₹${product.price}</h3>
@@ -60,6 +175,16 @@ function addToCart(id) {
             quantity: 1
         });
     }
+
+const floatingCart = document.getElementById("floating-cart");
+
+floatingCart.classList.add("cart-bounce");
+
+setTimeout(() => {
+    floatingCart.classList.remove("cart-bounce");
+}, 400);
+
+showToast();
 
     updateCart();
 }
@@ -140,6 +265,12 @@ if (total) total.innerText = sum;
 document.getElementById("subtotal").innerText = sum;
 document.getElementById("total").innerText = sum;
 
+const cartCount = document.getElementById("cart-count");
+
+const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+cartCount.textContent = totalItems;
+
 localStorage.setItem("cart", JSON.stringify(cart));
 }
 
@@ -180,18 +311,6 @@ document.querySelectorAll("#cart button").forEach(button=>{
 
 function placeOrder(){
 
-    document.getElementById("checkout-form").style.display="none";
-
-    document.querySelectorAll("#products button").forEach(button=>{
-        button.disabled = false;
-    });
-
-    document.querySelectorAll("#cart button").forEach(button=>{
-        button.disabled = false;
-    });
-
-
-
     const name=document.getElementById("name").value;
     const phone=document.getElementById("phone").value;
     const address=document.getElementById("address").value;
@@ -218,13 +337,17 @@ if(pincode.length !== 6){
 
     return;
 }
+const orderItems = cart.map(item => {
+    return `• ${item.name}
+  Qty: ${item.quantity}
+  Price: ₹${item.price}`;
+}).join("\n\n");
 
 const message =
 `🛍️ *New Order*
 
-Product: Crochet Shell Bag
-Price: ₹699
-Quantity: ${cart[0].quantity}
+Items:
+${orderItems}
 
 Customer: ${name}
 Phone: +91${phone}
@@ -239,6 +362,55 @@ const whatsappURL =
 
 window.open(whatsappURL, "_blank");
 
+ document.getElementById("checkout-form").style.display="none";
+
+    document.querySelectorAll("#products button").forEach(button=>{
+        button.disabled = false;
+    });
+
+    document.querySelectorAll("#cart button").forEach(button=>{
+        button.disabled = false;
+    });
+
+
+// Close the checkout popup immediately
+document.getElementById("checkout-modal").style.display = "none";
+
+// Re-enable all buttons
+document.querySelectorAll("#products button").forEach(button => {
+    button.disabled = false;
+});
+
+document.querySelectorAll("#cart button").forEach(button => {
+    button.disabled = false;
+});
+
+document.getElementById("checkout-modal").style.display = "none";
+
+document.querySelectorAll("#products button").forEach(button=>{
+    button.disabled = false;
+});
+
+document.querySelectorAll("#cart button").forEach(button=>{
+    button.disabled = false;
+});
+
+const sent = confirm(
+    "Have you sent your WhatsApp order?\n\nClick OK after you've sent it.\nClick Cancel if you haven't."
+);
+
+if (sent) {
+    cart = [];
+    updateCart();
+    localStorage.removeItem("cart");
+    alert("🎉 Thank you! Your cart has been cleared.");
+}
+
+confetti({
+    particleCount: 150,
+    spread: 100,
+    origin: { y: 0.6 }
+});
 }
 
 function cancelCheckout(){
@@ -280,5 +452,23 @@ document.getElementById("checkout-modal").style.display = "none";
     });
 
     updateCart();
+}
+
+function scrollToCart() {
+    document.getElementById("cart").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function showToast(){
+
+    const toast=document.getElementById("toast");
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+        toast.classList.remove("show");
+    },2000);
+
 }
 

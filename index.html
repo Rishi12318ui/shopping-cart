@@ -31,17 +31,10 @@
         <span>₹<span id="subtotal">0</span></span>
     </div>
 
-    <div class="summary-row">
-        <span>Shipping</span>
-        <span style="color: green;">FREE</span>
-    </div>
-
-    <hr>
-
-    <div class="summary-row total-row">
-        <span>Total</span>
-        <span>₹<span id="total">0</span></span>
-    </div>
+    
+<div class="summary-row">
+    <span>Shipping</span>
+    <span style="color:green;">FREE</span>
 </div>
 
     <hr>
@@ -50,13 +43,11 @@
         <span>Total</span>
         <span>₹<span id="total">0</span></span>
     </div>
-
 </div>
 
 <button id="checkout-btn" onclick="checkout()">
     Proceed to Checkout
 </button>
-</div>
 
 <div id="checkout-modal" style="display:none;">
     <div id="checkout-form">
@@ -101,17 +92,19 @@
 </button>
 
 </div>
-
-<div id="floating-cart" onclick="scrollToCart()">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
-        <circle cx="9" cy="21" r="1"></circle>
-        <circle cx="20" cy="21" r="1"></circle>
-        <path d="M1 1h4l2.68 13.39A2 2 0 0 0 9.64 16H19a2 2 0 0 0 2-1.64L23 6H6"></path>
-    </svg>
-
-    <span id="cart-count">0</span>
 </div>
 
+<div id="floating-cart" onclick="scrollToCart()">
+🛒
+<span id="cart-count">0</span>
+</div>
+
+<div id="toast">
+    ✅ Added to Cart!
+</div>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 <script src="script.js"></script>
 
 </body>

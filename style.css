@@ -11,17 +11,22 @@ h1{
 }
 
 #products{
-    display:flex;
-    justify-content:center;
+    display:grid;
+    grid-template-columns:repeat(2, minmax(300px, 1fr));
+    gap:25px;
+    max-width:900px;
+    margin:30px auto;
+    padding:20px;
 }
 
 .product{
-    background:white;
-    width:320px;
+    background: white;
+    width:100%;
     border-radius:15px;
     padding:20px;
     box-shadow:0 5px 20px rgba(0,0,0,.15);
     text-align:center;
+    box-sizing:border-box;
 }
 
 .product-image{
@@ -560,31 +565,81 @@ button:disabled{
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 80px;
-    height: 80px;
-    background: red;
+    width: 60px;
+    height: 60px;
+    background: #0d6efd;
     color: white;
-    border: 5px solid blue;
-    z-index: 999999;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 9999;
+    user-select: none;
+    transition: all .25s ease;
+}
+
+#floating-cart:hover{
+    transform: scale(1.12);
+    box-shadow: 0 12px 28px rgba(0,0,0,.35);
 }
 
 #cart-count{
-    position:absolute;
-    bottom:2px;
-    right:2px;
-    background:red;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background: #ff3b30;
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+@keyframes cartBounce{
+    0%{transform:scale(1);}
+    30%{transform:scale(1.25);}
+    60%{transform:scale(.9);}
+    100%{transform:scale(1);}
+}
+
+.cart-bounce{
+    animation: cartBounce .4s ease;
+}
+
+#toast{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%) translateY(100px);
+    background:#222;
     color:white;
-    width:22px;
-    height:22px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:12px;
+    padding:14px 22px;
+    border-radius:12px;
     font-weight:bold;
+    opacity:0;
+    transition:.35s;
+    z-index:10000;
+}
+
+#toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+
+.product-image{
+    transition: transform .3s ease;
+    cursor: pointer;
+}
+
+.product:hover .product-image{
+    transform: scale(1.08);
 }
 

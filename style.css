@@ -654,27 +654,25 @@ body{
 }
 
 #products{
-    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-columns:repeat(2,minmax(175px,1fr));
     gap:12px;
-    padding:12px;
+    padding:8px;
 }
 
 .product{
     width:100%;
-    max-width:100%;
+    max-width:none;
+    padding:15px;
 }
 
 .store-header{
-    width:100%;
-    margin:0 12px 20px;
-    padding:40px 20px;
-    border-radius:18px;
-    box-sizing:border-box;
+    width:calc(100% - 16px);
+    margin:0 auto 20px;
+    padding:40px 15px;
 }
 
 .store-header h1{
     font-size:46px;
-    line-height:1.1;
 }
 
 .store-header p {

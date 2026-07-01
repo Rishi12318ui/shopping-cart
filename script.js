@@ -1,5 +1,7 @@
 const products = [
 
+
+
 {
     id: 1,
     name: "Crochet Shell Bag",
@@ -12,7 +14,7 @@ const products = [
     id: 2,
     name: "Crochet Football Keychain",
     price: 349,
-    description: "Handmade crochet football keychain. A cute accessory, perfect gifting to football lovers. ",
+    description: "Handmade crochet football keychain. A cute accessory, perfect gift to football lovers. ",
     image: "images/image2.png"
 },
 

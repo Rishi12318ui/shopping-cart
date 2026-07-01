@@ -13,13 +13,11 @@ h1{
 
 #products{
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-columns:repeat(2,1fr);
     gap:20px;
-    max-width:900px;
+    max-width:760px;
     margin:30px auto;
     padding:20px;
-    width:100%;
-    box-sizing:border-box;
 }
 
 .product{
@@ -656,25 +654,27 @@ body{
 }
 
 #products{
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-    padding:10px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+    padding:12px;
 }
 
 .product{
-    max-width:none;
     width:100%;
+    max-width:100%;
 }
 
 .store-header{
     width:100%;
-    margin:0 0 20px 0;
-    padding:35px 15px;
+    margin:0 12px 20px;
+    padding:40px 20px;
     border-radius:18px;
+    box-sizing:border-box;
 }
 
-.store-header h1 {
-    font-size: 42px;
+.store-header h1{
+    font-size:46px;
+    line-height:1.1;
 }
 
 .store-header p {

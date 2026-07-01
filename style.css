@@ -280,6 +280,8 @@ button:disabled{
 
     box-shadow:0 3px 10px rgba(0,0,0,.08);
 
+    gap:15px;
+
 }
 
 .cart-left{
@@ -680,6 +682,16 @@ body{
 .store-header p {
     font-size: 20px;
     margin-top: 10px;
+}
+
+.cart-item{
+    flex-wrap:wrap;
+}
+
+.quantity-controls{
+    width:100%;
+    justify-content:center;
+    margin-top:10px;
 }
 
 }

@@ -12,7 +12,7 @@ const products = [
     id: 2,
     name: "Crochet Football Keychain",
     price: 349,
-    description: "Handmade crochet football keychain. A cute and sporty mini accessory, perfect gifting to football lovers. ",
+    description: "Handmade crochet football keychain. A cute accessory, perfect gifting to football lovers. ",
     image: "images/image2.png"
 },
 
@@ -76,7 +76,7 @@ const products = [
     id: 10,
     name: "Set of 6 Crochet Kashmiri Bangles(Size 2.4)",
     price: 499,
-    description: "Handmade crochet Kashmiri bangles. perfect for adding a traditional touch to your style or gifting.",
+    description: "Handmade crochet Kashmiri bangles. great for adding a touch to your style or gifting.",
     image: "images/image10.png"
 },
 
@@ -84,7 +84,7 @@ const products = [
     id: 11,
     name: "Crochet Laptop/iPad/Book Cover",
     price: 499,
-    description: "Handmade crochet laptop/iPad/book cover. Stylish and protective, perfect for carrying your essentials with a unique handmade touch.",
+    description: "Handmade crochet laptop/iPad/book cover. perfect for carrying your essentials with a unique handmade touch.",
     image: "images/image11.png"
 },
 
@@ -108,7 +108,7 @@ const products = [
     id: 14,
     name: " Pair of Crochet Earrings",
     price: 399,
-    description: "Handmade crochet earrings. Lightweight and elegant, perfect for everyday wear, special occasions, or gifting.",
+    description: "Handmade crochet earrings. Lightweight, elegant, perfect for wearing on special occasions, or gifting.",
     image: "images/image14.png"
 },
 

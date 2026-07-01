@@ -23,7 +23,7 @@ h1{
 .product{
     background:white;
     width:100%;
-    max-width:320px;
+    max-width:none;
     border-radius:15px;
     padding:20px;
     box-shadow:0 5px 20px rgba(0,0,0,.15);
@@ -650,31 +650,35 @@ button:disabled{
 @media (max-width: 768px) {
 
 body{
-    padding:10px;
+    padding:12px;
 }
 
 #products{
-    grid-template-columns:repeat(2,minmax(175px,1fr));
-    gap:12px;
-    padding:8px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    padding:14px;
+    max-width:none;
 }
 
 .product{
     width:100%;
-    max-width:none;
-    padding:15px;
+    max-width:100%;
+    padding:18px;
+}
+
+.product-image{
+    height:250px;
 }
 
 .store-header{
-    width:calc(100% - 16px);
-    margin:0 auto 20px;
-    padding:40px 15px;
+    width:calc(100% - 28px);
+    margin:0 auto 25px;
 }
 
 .store-header h1{
-    font-size:46px;
+    font-size:56px;
 }
-
 .store-header p {
     font-size: 20px;
     margin-top: 10px;

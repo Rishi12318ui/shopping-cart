@@ -13,11 +13,13 @@ h1{
 
 #products{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2,minmax(0,1fr));
     gap:20px;
-    max-width:760px;
+    width:100%;
+    max-width:900px;
     margin:30px auto;
     padding:20px;
+    box-sizing:border-box;
 }
 
 .product{
@@ -670,10 +672,12 @@ body{
 
 #products{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:14px;
-    padding:14px;
-    max-width:none;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    width:100%;
+    padding:12px;
+    margin:20px 0;
+    box-sizing:border-box;
 }
 
 .product{

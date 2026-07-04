@@ -135,21 +135,25 @@ function displayProducts() {
 
     products.forEach(product => {
         productsDiv.innerHTML += `
-            <div class="product">
+          <div class="product">
 
     <img src="${product.image}" class="product-image">
 
-    <h2>${product.name}</h2>
+    <div class="product-content">
 
-    <p class="description">
-        ${product.description}
-    </p>
+        <h2>${product.name}</h2>
 
-    <h3>₹${product.price}</h3>
+        <p class="description">
+            ${product.description}
+        </p>
 
-    <p class="stock">✅ In Stock</p>
+        <h3>₹${product.price}</h3>
 
-    <p class="shipping">🚚 Free Shipping</p>
+        <p class="stock">✅ In Stock</p>
+
+        <p class="shipping">🚚 Free Shipping</p>
+
+    </div>
 
     <button onclick="addToCart(${product.id})">
         Add to Cart
@@ -158,7 +162,6 @@ function displayProducts() {
     <button class="buy-now" onclick="buyNow(${product.id})">
         Buy Now
     </button>
-
 
 </div>
         `;

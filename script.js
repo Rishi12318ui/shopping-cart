@@ -4,9 +4,8 @@ const products = [
 
 {
     id: 1,
-    name: "Crochet Shell Bag",
+    name: "Crochet Shell Bag"  ,
     price: 699,
-    description: "Beautiful handmade crochet shell bag. Perfect for casual outings and gifting.",
     image: "images/image1.png"
 },
 
@@ -14,7 +13,6 @@ const products = [
     id: 2,
     name: "Crochet Football Keychain",
     price: 349,
-    description: "Handmade crochet football keychain. A cute accessory, perfect gift to football lovers. ",
     image: "images/image2.png"
 },
 
@@ -22,7 +20,6 @@ const products = [
     id: 3,
     name: "Crochet Heart Keychain for DAD",
     price: 299,
-    description: "Handmade crochet heart keychain for Dad. Perfect for keys, bags, or as a heartfelt gift.",
     image: "images/image3.png"
 },
 
@@ -30,7 +27,6 @@ const products = [
     id: 4,
     name: "Crochet Tulip Tote Bag",
     price: 799,
-    description: "Handmade crochet tulip tote bag. Stylish and spacious, perfect for everyday use, shopping, or gifting.",
     image: "images/image4.png"
 },
 
@@ -38,7 +34,6 @@ const products = [
     id: 5,
     name: "Set of 3 Crochet Flower Bun Ties",
     price: 499,
-    description: "Handmade crochet flower bun ties. Charming hair accessories, perfect for everyday wear or gifting.",
     image: "images/image5.png"
 },
 
@@ -46,7 +41,6 @@ const products = [
     id: 6,
     name: "Crochet Triangle Shawl",
     price: 1799,
-    description: "Handmade crochet triangle shawl. Soft, stylish, and perfect for adding warmth and elegance to any outfit.",
     image: "images/image6.png"
 },
 
@@ -54,7 +48,6 @@ const products = [
     id: 7,
     name: "Crochet Rose Sling Bag",
     price: 499,
-    description: "Handmade crochet rose sling bag. Elegant and lightweight, perfect for everyday use, special occasions, or gifting.",
     image: "images/image7.png"
 },
 
@@ -62,7 +55,6 @@ const products = [
     id: 8,
     name: "Crochet Heart Keychain for MOM",
     price: 299,
-    description: "Handmade crochet heart keychain for Mom. A sweet and thoughtful keepsake, perfect for keys, bags, or as a heartfelt gift.",
     image: "images/image8.png"
 },
 
@@ -70,7 +62,6 @@ const products = [
     id: 9,
     name: "Crochet Flower Bracelet",
     price: 299,
-    description: "Handmade crochet flower bracelet. Elegant and lightweight,a delicate and stylish accessory, perfect for everyday wear or gifting.",
     image: "images/image9.png"
 },
 
@@ -78,7 +69,6 @@ const products = [
     id: 10,
     name: "Set of 6 Crochet Kashmiri Bangles(Size 2.4)",
     price: 499,
-    description: "Handmade crochet Kashmiri bangles. great for adding a touch to your style or gifting.",
     image: "images/image10.png"
 },
 
@@ -86,7 +76,6 @@ const products = [
     id: 11,
     name: "Crochet Laptop/iPad/Book Cover",
     price: 499,
-    description: "Handmade crochet laptop/iPad/book cover. perfect for carrying your essentials with a unique handmade touch.",
     image: "images/image11.png"
 },
 
@@ -94,7 +83,6 @@ const products = [
     id: 12,
     name: "Crochet Morpankh Keychain",
     price: 399,
-    description: "Handmade crochet Morpankh keychain. A beautiful and unique accessory, perfect for keys, bags, or thoughtful gifting.",
     image: "images/image12.png"
 },
 
@@ -102,7 +90,6 @@ const products = [
     id: 13,
     name: "Set of 3 Crochet Yarn Keychain",
     price: 399,
-    description: "Handmade crochet yarn keychain. A cute and creative accessory, perfect for bags, or gifting to crochet lovers.",
     image: "images/image13.png"
 },
 
@@ -110,7 +97,6 @@ const products = [
     id: 14,
     name: " Pair of Crochet Earrings",
     price: 399,
-    description: "Handmade crochet earrings. Lightweight, elegant, perfect for wearing on special occasions, or gifting.",
     image: "images/image14.png"
 },
 
@@ -118,7 +104,6 @@ const products = [
     id: 15,
     name: "Crochet Rainbow Keychain",
     price: 329,
-    description: "Handmade crochet rainbow keychain. A colorful and cheerful accessory, perfect for keys, bags, or gifting.",
     image: "images/image15.png"
 }
 
@@ -142,10 +127,6 @@ function displayProducts() {
     <div class="product-content">
 
         <h2>${product.name}</h2>
-
-        <p class="description">
-            ${product.description}
-        </p>
 
         <h3>₹${product.price}</h3>
 

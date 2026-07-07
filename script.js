@@ -1,6 +1,11 @@
 const products = [
 
-
+{
+    id: 16,
+    name: "Crochet Lily Flower",
+    price: 0,
+    image: "images/image16.png"
+},
 
 {
     id: 1,
@@ -67,14 +72,14 @@ const products = [
 
 {
     id: 10,
-    name: "Set of 6 Crochet Kashmiri Bangles(Size 2.4)",
+    name: "Set of 6 Crochet Kashmiri Bangles <br> (Size 2.4)",
     price: 499,
     image: "images/image10.png"
 },
 
 {
     id: 11,
-    name: "Crochet Laptop/iPad/Book Cover",
+    name: "Crochet Laptop/Book Cover",
     price: 499,
     image: "images/image11.png"
 },
@@ -105,7 +110,7 @@ const products = [
     name: "Crochet Rainbow Keychain",
     price: 329,
     image: "images/image15.png"
-}
+},
 
 ];
 

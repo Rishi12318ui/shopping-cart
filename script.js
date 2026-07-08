@@ -140,6 +140,145 @@ const products = [
     image: "images/image20.png"
 },
 
+{
+    id: 21,
+    name: "Crochet Pokemon Ultra Ball Keychain",
+    price: 399,
+    image: "images/image21.png"
+},
+
+{
+    id: 22,
+    name: "Crochet Pokemon Master Ball Keychain",
+    price: 399,
+    image: "images/image22.png"
+},
+
+{
+    id: 23,
+    name: "Crochet Pokemon Great Ball Keychain ",
+    price: 399,
+    image: "images/image23.png"
+},
+
+{
+    id: 24,
+    name: "Crochet Pokeball Keychain",
+    price: 399,
+    image: "images/image24.png"
+},
+
+{
+    id: 25,
+    name: "Crochet Cap ",
+    price: 299,
+    image: "images/image25.png"
+},
+
+{
+    id: 26,
+    name: "Crochet Candies (Set of 4) ",
+    price: 249,
+    image: "images/image26.png"
+},
+
+{
+    id: 27,
+    name: "Crochet Flower Headband ",
+    price: 199,
+    image: "images/image27.png"
+},
+
+{
+    id: 28,
+    name: "Crochet Puff Stitch Flower",
+    price: 99,
+    image: "images/image28.png"
+},
+
+{
+    id: 29,
+    name: "Crochet Baby Dress",
+    price: 1299,
+    image: "images/image29.png"
+},
+
+{
+    id: 30,
+    name: "Crochet Bandana (Head Wrap) ",
+    price: 349,
+    image: "images/image30.png"
+},
+
+{
+    id: 31,
+    name: "Crochet Frappe Cup ",
+    price: 299,
+    image: "images/image31.png"
+},
+
+{
+    id: 32,
+    name: "Crochet Coffee Mug Scarf",
+    price: 449,
+    image: "images/image32.png"
+},
+
+{
+    id: 33,
+    name: "Crochet Ruffle Cuffs (Pair)",
+    price: 349,
+    image: "images/image33.png"
+},
+
+{
+    id: 34,
+    name: "Crochet Hair Scrunchie",
+    price: 199,
+    image: "images/image34.png"
+},
+
+{
+    id: 35,
+    name: "Crochet Evileye Table Mat",
+    price: 499,
+    image: "images/image35.png"
+},
+
+{
+    id: 36,
+    name: "Crochet Mini Santa Cap",
+    price: 99,
+    image: "images/image36.png"
+},
+
+{
+    id: 37,
+    name: "Crochet Santa Jar Cover",
+    price: 499,
+    image: "images/image37.png"
+},
+
+{
+    id: 38,
+    name: "Crochet Rose Bag",
+    price: 999,
+    image: "images/image38.png"
+},
+
+{
+    id: 39,
+    name: "Crochet Santa Applique",
+    price: 99,
+    image: "images/image39.png"
+},
+
+{
+    id: 40,
+    name: "Crochet Flower Pot Fridge Magnet",
+    price: 249,
+    image: "images/image40.png"
+},
 
 ];
 
@@ -297,7 +436,7 @@ cartCount.textContent = totalItems;
 localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-displayProducts();
+updateProducts();
 updateCart();
 
 function buyNow(id){
@@ -495,17 +634,40 @@ function showToast(){
 
 }
 
-function searchProducts(){
+function searchProducts() {
+    updateProducts();
+}
 
-    const text = document
-        .getElementById("search")
-        .value
-        .toLowerCase();
+function sortProducts() {
+    updateProducts();
+}
 
-    const filtered = products.filter(product =>
-        product.name.toLowerCase().includes(text)
-    );
+function updateProducts() {
+
+    let filtered = [...products];
+
+    const search = document.getElementById("search").value.toLowerCase();
+
+    if (search) {
+        filtered = filtered.filter(product =>
+            product.name.toLowerCase().includes(search)
+        );
+    }
+
+    const sort = document.getElementById("sort").value;
+
+    if (sort === "low") {
+        filtered.sort((a, b) => a.price - b.price);
+    }
+    else if (sort === "high") {
+        filtered.sort((a, b) => b.price - a.price);
+    }
+
+    // If "default" is selected, nothing happens.
+    // The products stay in the exact order they appear
+    // inside your products array.
 
     displayProducts(filtered);
-
 }
+
+

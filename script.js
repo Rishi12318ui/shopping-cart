@@ -120,38 +120,41 @@ const productsDiv = document.getElementById("products");
 const cartItems = document.getElementById("cart-items");
 const total = document.getElementById("total");
 
-function displayProducts() {
+function displayProducts(list = products){
 
+    productsDiv.innerHTML = "";
 
-    products.forEach(product => {
+    list.forEach(product => {
+
         productsDiv.innerHTML += `
-          <div class="product">
+        <div class="product">
 
-    <img src="${product.image}" class="product-image">
+            <img src="${product.image}" class="product-image">
 
-    <div class="product-content">
+            <div class="product-content">
 
-        <h2>${product.name}</h2>
+                <h2>${product.name}</h2>
 
-        <h3>₹${product.price}</h3>
+                <h3>₹${product.price}</h3>
 
-        <p class="stock">✅ In Stock</p>
+                <p class="stock">✅ In Stock</p>
 
-        <p class="shipping">🚚 Free Shipping</p>
+                <p class="shipping">🚚 Free Shipping</p>
 
-    </div>
+            </div>
 
-    <button onclick="addToCart(${product.id})">
-        Add to Cart
-    </button>
+            <button onclick="addToCart(${product.id})">
+                Add to Cart
+            </button>
 
-    <button class="buy-now" onclick="buyNow(${product.id})">
-        Buy Now
-    </button>
+            <button class="buy-now" onclick="buyNow(${product.id})">
+                Buy Now
+            </button>
 
-</div>
+        </div>
         `;
     });
+
 }
 
 function addToCart(id) {
@@ -463,3 +466,17 @@ function showToast(){
 
 }
 
+function searchProducts(){
+
+    const text = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    const filtered = products.filter(product =>
+        product.name.toLowerCase().includes(text)
+    );
+
+    displayProducts(filtered);
+
+}

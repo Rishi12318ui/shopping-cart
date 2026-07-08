@@ -231,6 +231,25 @@ button:disabled{
     box-sizing:border-box;
 }
 
+#search{
+    width:100%;
+    max-width:500px;
+    margin:25px auto 0;
+    display:block;
+    padding:14px 18px;
+    font-size:17px;
+    border:2px solid #ddd;
+    border-radius:30px;
+    outline:none;
+    box-sizing:border-box;
+    transition:.25s;
+}
+
+#search:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 10px rgba(13,110,253,.15);
+}
+
 .store-header h1{
     margin:0;
     font-size:38px;
@@ -724,6 +743,11 @@ body{
     width:100%;
     justify-content:space-between;
     margin-top:12px;
+}
+
+#search{
+    max-width:100%;
+    font-size:16px;
 }
 
 }

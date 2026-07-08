@@ -3,7 +3,7 @@ const products = [
 {
     id: 16,
     name: "Crochet Lily Flower",
-    price: 0,
+    price: 349,
     image: "images/image16.png"
 },
 
@@ -111,6 +111,35 @@ const products = [
     price: 329,
     image: "images/image15.png"
 },
+
+{
+    id: 17,
+    name: "Crochet Keychain for Cricket Lovers",
+    price: 399,
+    image: "images/image17.png"
+},
+
+{
+    id: 18,
+    name: "Crochet Toran Patti Jai Mata Di",
+    price: 999,
+    image: "images/image18.png"
+},
+
+{
+    id: 19,
+    name: "Crochet Sunflower Scrunchie",
+    price: 249,
+    image: "images/image19.png"
+},
+
+{
+    id: 20,
+    name: "Crochet Shivling",
+    price: 499,
+    image: "images/image20.png"
+},
+
 
 ];
 

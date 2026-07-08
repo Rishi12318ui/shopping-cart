@@ -750,6 +750,29 @@ body{
     font-size:16px;
 }
 
+#sort{
+    max-width:100%;
+}
+
+#sort{
+    width:100%;
+    max-width:500px;
+    margin:15px auto 0;
+    display:block;
+    padding:14px 18px;
+    font-size:16px;
+    border:2px solid #ddd;
+    border-radius:30px;
+    background:white;
+    outline:none;
+    box-sizing:border-box;
+    cursor:pointer;
+}
+
+#sort:focus{
+    border-color:#0d6efd;
+}
+
 }
 
 .product h2{
@@ -785,3 +808,17 @@ body{
     margin-top:auto;
     margin-bottom:5px;
 }
+
+#sort{
+    display:block;
+    width:260px;
+    max-width:90%;
+    margin:20px auto;
+    padding:12px;
+    font-size:16px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    background:white;
+    cursor:pointer;
+}
+

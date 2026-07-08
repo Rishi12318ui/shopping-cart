@@ -23,6 +23,16 @@
     onkeyup="searchProducts()">
 </header>
 
+<select id="sort" onchange="sortProducts()">
+
+    <option value="default">Latest</option>
+
+    <option value="low">Price: Low to High</option>
+
+    <option value="high">Price: High to Low</option>
+
+</select>
+
 <div id="products"></div>
 
 <div id="cart">

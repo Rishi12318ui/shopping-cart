@@ -202,7 +202,7 @@ const products = [
 
 {
     id: 26,
-    name: "Crochet Candies (Set of 4) ",
+    name: "Crochet Candies <br> (Set of 4) ",
     categories: ["Home Decor"],
     price: 249,
     image: "images/image26.png"

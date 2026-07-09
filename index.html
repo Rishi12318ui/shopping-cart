@@ -23,15 +23,62 @@
     onkeyup="searchProducts()">
 </header>
 
-<select id="sort" onchange="sortProducts()">
+<div class="top-controls">
 
-    <option value="default">Latest</option>
+    <select id="sort" onchange="sortProducts()">
 
-    <option value="low">Price: Low to High</option>
+        <option value="default">Sort By Latest</option>
 
-    <option value="high">Price: High to Low</option>
+        <option value="low">Sort By Price Low to High</option>
 
-</select>
+        <option value="high">Sort By Price High to Low</option>
+
+    </select>
+
+    <button id="filter-btn" onclick="toggleFilters()">
+        Filters
+    </button>
+
+</div>
+
+<div id="filters-panel" style="display:none;">
+
+    <h3>Price Range</h3>
+
+<div id="price-filter">
+
+    <input
+        type="range"
+        id="price-slider"
+        oninput="updatePriceFilter()">
+
+    <div class="price-inputs">
+
+        ₹
+        <input
+            type="number"
+            id="min-price"
+            oninput="updatePriceInputs()">
+
+        <span>to</span>
+
+        ₹
+        <input
+            type="number"
+            id="max-price"
+            oninput="updatePriceInputs()">
+
+    </div>
+
+</div>
+
+    <hr>
+
+    <h3>Categories</h3>
+
+    <div id="category-buttons"></div>
+
+</div>
 
 <div id="products"></div>
 
